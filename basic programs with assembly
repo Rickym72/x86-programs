@@ -30,12 +30,6 @@ main ENDP				  ; end program
 END main
 
 ;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-; ATTACHED : HW_3ABC
-;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-; PROGRAMMER: RICK MARTINEZ 
-; PROGRAM : HW_3B
-; CLASS : CS_129
-;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 INCLUDE Irvine32.inc
 
 .data
@@ -55,8 +49,6 @@ main PROC
 exit
 main ENDP
 END main	
-;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-; PROGRAMMER: RICK MARTINEZ 
 ;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 INCLUDE Irvine32.inc
 
@@ -94,8 +86,6 @@ main ENDP
 END main
 
 ;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-; PROGRAMMER: RICK MARTINEZ 
-;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		; THIS PROGRAM IS THE USE OF A LOOP STATING TO DO YOUR HW 3 TIMES 
 INCLUDE Irvine32.inc
 
@@ -122,8 +112,6 @@ exit
 main ENDP
 END main
 
-;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-; PROGRAMMER: RICK MARTINEZ 
 ;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 INCLUDE Irvine32.inc
 
