@@ -1,0 +1,194 @@
+
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; PROGRAMMER: RICK MARTINEZ 
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sunday = 0 	; setting all dates to appropriate values 
+Monday = 1
+Tuesday = 2
+Wednesday = 3
+Thursday = 4
+Friday = 5
+Saturday = 6
+
+
+.data
+    days BYTE 0, 1, 2, 3, 4, 5, 6	; creating array of days with all 
+					; day of the week 0-6
+
+.code
+main PROC
+    mov eax, 4				; moving all the values to the registers
+    mov ebx, 3
+    mov ecx, 2
+    mov edx, 1
+
+call DumpRegs				 ; showing all the registers 
+	
+	exit 
+main ENDP				  ; end program 
+END main
+
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; ATTACHED : HW_3ABC
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; PROGRAMMER: RICK MARTINEZ 
+; PROGRAM : HW_3B
+; CLASS : CS_129
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INCLUDE Irvine32.inc
+
+.data
+    side DWORD 5	; setting side to 5 as per hw instructions 
+    sum DWORD 0		; sum = 0 
+.code
+main PROC
+    mov eax, side
+    add sum, eax	; add 5
+    add sum, eax	; add 5 
+    add sum, eax	; add 5 
+    add sum, eax	; add 5
+
+    call DumpRegs	; show registers 
+
+
+exit
+main ENDP
+END main	
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; PROGRAMMER: RICK MARTINEZ 
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INCLUDE Irvine32.inc
+
+.data
+    width1 BYTE "User input width: ", 0	; ask for user input 
+	
+    length1 BYTE "User input length: ", 0 ; ask for user input again 
+
+    num1 DWORD 0	;in values to 0 
+    num2 DWORD 0
+    equals1 BYTE "The square equals ", 0	;prompt string to show equals 
+    .code
+
+main PROC
+    mov edx, OFFSET width1
+    call WriteString
+    call ReadInt
+    mov num1, eax
+
+
+    mov edx, OFFSET length1
+    call WriteString
+    call ReadInt
+    mov num2, eax
+
+    mov edx, OFFSET equals1
+    call WriteString
+    imul eax, num1
+    call WriteInt
+
+    call CRLF
+
+exit
+main ENDP
+END main
+
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; PROGRAMMER: RICK MARTINEZ 
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		; THIS PROGRAM IS THE USE OF A LOOP STATING TO DO YOUR HW 3 TIMES 
+INCLUDE Irvine32.inc
+
+.data
+    prompt BYTE "Do your homework!", 0
+
+
+.code
+main PROC
+mov ecx, 3		; set loop value to 3 
+
+L1:
+  mov edx, OFFSET prompt
+  call WriteString
+
+  call CRLF
+
+loop L1		; do loop until value is 0 
+
+
+
+
+exit
+main ENDP
+END main
+
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; PROGRAMMER: RICK MARTINEZ 
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INCLUDE Irvine32.inc
+
+NUM1 = 3
+ENDPRINT TEXTEQU <"Goodbye! ", 0dh, 0ah, 0>
+
+
+.data
+intro BYTE "Hello ", 0
+
+prompt BYTE "Enter your last name: ", 0
+
+lastName BYTE 50 DUP(0)
+
+num2 BYTE "Enter the second number: ", 0
+
+equals BYTE "The sum equals: ", 0
+
+firstName BYTE "Rick ", 0
+
+sum BYTE 0
+
+input2 BYTE NUM1
+
+aurevoir BYTE "BYE"
+
+
+.code
+main PROC
+
+    mov edx, OFFSET prompt
+    call WriteString
+    mov edx, OFFSET lastName
+    mov ecx, SIZEOF lastName - 1
+    call ReadString
+    call CRLF
+
+    mov edx, OFFSET intro
+    call WriteString
+    mov edx, OFFSET firstName
+    call WriteString
+    mov edx, OFFSET lastname
+    call WriteString
+    call CRLF
+
+    mov edx, OFFSET num2
+    call WriteString
+    call ReadInt
+    mov sum, al
+
+
+    mov edx, OFFSET equals
+    call WriteString
+    mov al, input2 
+    add al, sum
+    call WriteDec
+    call CRLF
+
+    mov edx, OFFSET aurevoir
+    call WriteString
+
+
+
+    call CRLF
+
+exit
+main ENDP
+END main
